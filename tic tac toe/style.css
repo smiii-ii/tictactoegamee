@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff4d6d, #6a0dad, #1dd1a1, #ff9f43);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: 'Orbitron', sans-serif;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(0,0,0,0.85);
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #fff, 0 0 50px #ff4d6d, 0 0 70px #6a0dad;
+    color: #fff;
+}
+
+#resetBtn {
+    background-color: #ff9f43;
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+#resetBtn:hover {
+    background-color: #ff6b6b;
+    transform: scale(1.1);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 15px;
+    justify-content: center;
+}
+
+.cell {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #fff;
+    text-shadow: 0 0 10px #fff;
+}
+
+.cell:hover {
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 0 15px #fff, 0 0 25px #ff9f43;
+    transform: scale(1.1);
+}
+
+#status {
+    margin-top: 25px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.winner-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: #1dd1a1;
+    padding: 40px 60px;
+    border-radius: 25px;
+    box-shadow: 0 0 50px #fff, 0 0 80px #1dd1a1;
+    z-index: 10;
+    text-align: center;
+    color: #fff;
+    animation: popUp 0.4s forwards;
+}
+
+@keyframes popUp {
+    to { transform: translate(-50%, -50%) scale(1); }
+}
+
+.winner-card.hidden {
+    display: none;
+}
+
+.winner-card i {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: gold;
+    text-shadow: 0 0 20px #fff;
+}
+
+.winner-card h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.winner-card button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ff6b6b;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.winner-card button:hover {
+    background-color: #ff4757;
+    transform: scale(1.05);
+}
